@@ -1,0 +1,154 @@
+
+:root {
+  --mint: #a0dccc;
+}
+.bg-gardient-mint{
+	background: linear-gradient(15deg, var(--mint), #09816c);
+}  
+.bg-mint{
+	background: var(--mint);
+}   
+@media screen and (max-width: 370px){
+   .title{
+      font-size: 1.6em !important;
+   }
+}
+
+   
+.nav-scroller {
+   position: relative;
+   z-index: 2;
+   height: 2.75rem;
+   overflow-y: hidden;
+}
+.nav-scroller .nav {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -ms-flex-wrap: nowrap;
+   flex-wrap: nowrap;
+   padding-bottom: 1rem;
+   margin-top: -1px;
+   overflow-x: auto;
+   text-align: center;
+   white-space: nowrap;
+   -webkit-overflow-scrolling: touch;
+}
+
+
+.text-bottom{
+  position: relative;
+}
+.text-bottom:before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 80%;
+  background: var(--mint);
+}
+
+.lessons>a{
+	text-decoration: none;
+}
+.link-hover img{
+	transition: .3s ease transform, .3s ease border-radius;
+}
+.link-hover:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: var(--mint);
+	width: 100%;
+	transition: .3s ease height;
+	height: 4px;
+	border-bottom-left-radius: calc(0.25rem - 1px);
+   border-bottom-right-radius: calc(0.25rem - 1px);
+}
+.link-hover:hover img{
+	transform: scale(1.1);
+	border-radius: calc(0.25rem - 1px);
+}
+.link-hover:hover:before{
+	height: 8px;
+}
+.profile-avatar{
+	width: 160px;
+	height: 160px;
+}
+.profile-avatar-img{
+	width: 100%;
+	height: 100%;
+	object-position: center;
+	object-fit: cover;
+}
+.user_panel-img{
+	height: 140px;
+}
+.user_panel-img>img{
+	width: 100%;
+	height: 100%;
+	object-position: center;
+	object-fit: cover;
+}
+
+.training-header{
+	position: relative;
+}
+.training-header:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: var(--mint);
+}
+
+
+.file-area {
+	width: 100%;
+	position: relative;
+}
+.file-area input[type=file] {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+.file-area .file-dummy {
+	width: 100%;
+	padding: 30px;
+	background: rgba(0, 0, 0, 0.05);
+	border: 2px dashed var(--primary);
+	text-align: center;
+	transition: background 0.3s ease-in-out;
+}
+.file-area .file-dummy .success {
+	display: none;
+}
+.file-area:hover .file-dummy {
+	background: rgba(255, 255, 255, 0.1);
+}
+.file-area input[type=file]:focus + .file-dummy {
+	outline: 2px solid rgba(255, 255, 255, 0.5);
+	outline: -webkit-focus-ring-color auto 5px;
+}
+.file-area input[type=file]:valid + .file-dummy {
+	border-color: rgba(0, 255, 0, 0.4);
+	background-color: rgba(0, 255, 0, 0.3);
+}
+.file-area input[type=file]:valid + .file-dummy .success {
+	display: inline-block;
+}
+.file-area input[type=file]:valid + .file-dummy .default {
+	display: none;
+}
