@@ -63,9 +63,7 @@ Route::middleware(['auth'])->group(function () {
 		'namespace' => 'Admin',
 		'as' => 'admin.'
 	], function(){
-		Route::get('/', function(){
-			return view('admin.index');
-		})->name('index');
+		Route::get('/', 'MainController@index')->name('index');
 		Route::resource('categories', 'CategoryController');
 		Route::resource('courses', 'CourseController');
 		Route::resource('lectures', 'LectureController');
