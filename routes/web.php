@@ -66,7 +66,6 @@ Route::middleware(['auth'])->group(function () {
 		Route::get('/', function(){
 			return view('admin.index');
 		})->name('index');
-
 		Route::resource('categories', 'CategoryController');
 		Route::resource('courses', 'CourseController');
 		Route::resource('lectures', 'LectureController');
