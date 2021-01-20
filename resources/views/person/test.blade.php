@@ -10,7 +10,7 @@
     </p>
     @foreach($training->testResults as $result)
         @if( $result->checkAnswer() )
-            <p class="lead my-1" >
+            <p class="lead my-1" id="id{{ $result->id }}">
                 {!! $loop->iteration.'. '.$result->question->getTitleFilt() !!}
             </p>
             <table class="table table-sm rounded overflow-hidden border mb-3">
@@ -39,9 +39,9 @@
                 @endforeach
             </table>
         @else
-            <form action="{{ route('testAdd', $result->id) }} " method="post" class="mb-2">
+            <form action="{{ route('testAdd', $result->id.'#id'.$result->id) }} " method="post" class="mb-2">
                 @csrf
-                <p class="lead my-1" >
+                <p class="lead my-1" id="id{{ $result->id }}">
                     {!! $loop->iteration.'. '.$result->question->getTitleFilt() !!}
                 </p>
                 <table class="table table-sm rounded overflow-hidden border table-hover mb-1">

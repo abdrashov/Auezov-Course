@@ -34,8 +34,11 @@ class TestController extends Controller
 
 	public function testAdd(TestResult $TestResult, Request $request)
 	{
+		if( is_null($request->test_answer_id) ){
+			session()->flash('warning', 'Хорошая попытка, но это не сработает &#10084;');
+			return redirect()->route('home');
+		}
 		$TestResult->saveAnswer($request->test_answer_id);
-
 		return redirect()->back();
 	}
 }

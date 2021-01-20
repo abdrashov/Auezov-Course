@@ -10,14 +10,14 @@
 @if(session()->has('message'))
     <div class="alert alert-success mb-0">
         <div class="container">
-            {{ __(session()->get('message')) }}
+            {!! __(session()->get('message')) !!}
         </div>
     </div>
 @endif
 @if(session()->has('warning'))
     <div class="alert alert-warning mb-0 shadow-sm">
         <div class="container text-dark">
-            {{ __(session()->get('warning')) }}
+            {!! __(session()->get('warning')) !!}
         </div>
     </div>
 @endif

@@ -7,9 +7,8 @@
 	<br>
 	@include('messages.error_success')
 	<h5>Панель администратора</h5>
-	<hr>
 	<h2>Добро пожаловать, {{ Auth::user()->name.' '.Auth::user()->surname }}</h2>
-
+	<hr>
 	
 </main>
 
