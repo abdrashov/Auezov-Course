@@ -51,7 +51,7 @@ Route::group(
 			Route::get('/module/{course}/tests/{training}', 'TestController@test')
 			->name('test');
 		});
-		Route::post('/test/result/{TestQuestion}', 'TestController@testAdd')
+		Route::post('/test/result/{TestResult}', 'TestController@testAdd')
 		->name('testAdd');
 	});
 });

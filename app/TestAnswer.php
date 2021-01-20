@@ -35,7 +35,7 @@ class TestAnswer extends Model
 		return $this->ball > 0 ? true : false;
 	}
 
-	public function testResult()
+	public function testResults()
 	{
 		return $this->hasMany(TestResult::class, 'test_answer_id');
 	}

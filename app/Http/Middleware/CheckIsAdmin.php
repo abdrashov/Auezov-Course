@@ -19,6 +19,6 @@ class CheckIsAdmin
         if( Auth::user()->checkAdmin() ){
             return $next($request);
         }
-        return redirect()->route('home')->with('error', 'У вас нет прав администратора, свяжись с администрации');
+        return redirect()->route('home')->with('warning', 'У вас нет прав администратора, свяжись с администрации.');
     }
 }

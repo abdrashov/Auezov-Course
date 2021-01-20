@@ -18,20 +18,24 @@ class TestController extends Controller
 		if( !$training->users->contains(Auth::id()) ){
 			$training->users()->attach(Auth::id());
 		}
+		if( !$training->testResults()->exists() ){
+			foreach( $training->testQuestions as $question ){
+				$questions[] = [
+					'user_id' => Auth::id(),
+					'test_question_id' => $question->id,
+				];
+			}
+			$training->testResults()->createMany($questions);
+		}
 		return view('person.test', [
-			'training' => $training->load('testQuestions.answers', 'testQuestions.testResult', 'testQuestions.answers.testResult'),
+			'training' => $training->load('testResults.question.answers'),
 		]);
 	}
 
-	public function testAdd(TestQuestion $TestQuestion, Request $request)
+	public function testAdd(TestResult $TestResult, Request $request)
 	{
-		$test = $TestQuestion->testResult()->whereTraining();
-		if( !$test->exists() ){
-			$test->create([
-				'user_id' => Auth::id(),
-				'test_answer_id' => $request->test_answer_id,
-			]);
-		}
+		$TestResult->saveAnswer($request->test_answer_id);
+
 		return redirect()->back();
 	}
 }

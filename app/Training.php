@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Training extends Model
 {
@@ -12,6 +13,11 @@ class Training extends Model
 	{
 		return $this->hasMany(TestQuestion::class);
 	}
+
+   public function testResults()
+   {
+      return $this->hasMany(TestResult::class)->where('user_id', Auth::id());
+   }
 
 	public function lesson()
 	{
