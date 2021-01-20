@@ -56,17 +56,13 @@ Route::group(
 	});
 });
 
-Route::group([
-	'middleware' => 'auth'
-], function(){
-
+Route::middleware(['auth'])->group(function () {
 	Route::group([
 		'middleware' => 'is_admin',
 		'prefix' => 'admin',
 		'namespace' => 'Admin',
 		'as' => 'admin.'
 	], function(){
-
 		Route::get('/', function(){
 			return view('admin.index');
 		})->name('index');
@@ -79,9 +75,5 @@ Route::group([
 		Route::resource('lessons', 'LessonController');
 		Route::resource('trainings', 'TrainingController');
 		Route::resource('tests', 'TestController');
-
-
-
 	});
-
 });
