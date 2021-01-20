@@ -33,7 +33,7 @@
 		<div class="form-group row">
 			<label for="description" class="col-sm-2 col-form-label">О курсе</label>
 			<div class="col-sm-10">
-    			<textarea class="form-control" name="description" id="description" rows="3" placeholder="О курсе">{{ old('description') }}</textarea>
+    			<textarea class="form-control" name="description" id="description" rows="3" placeholder="О курсе" required>{{ old('description') }}</textarea>
 			</div>
 		</div>
 		<div class="form-group row">
