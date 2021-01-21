@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Регистрация')
+@section('title', __('app.registration'))
 
 @section('content')<br>
 <div class="container my-5">
