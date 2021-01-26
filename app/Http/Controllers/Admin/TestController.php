@@ -18,7 +18,7 @@ class TestController extends Controller
     public function show($training_id)
     {
         return view('admin.tests.index',[
-            'training' => Training::find($training_id),
+            'training' => Training::with('testQuestions.adminAnswers')->find($training_id),
         ]);
     }
 
@@ -69,7 +69,7 @@ class TestController extends Controller
         {
             $answer->update( ['title' => $request->answers[$index++] ]);
         }
-        return redirect()->route('admin.tests.show', $question->id); 
+        return redirect()->route('admin.tests.show', $question->training->id);
     }
 
     public function destroy($testQuestion)

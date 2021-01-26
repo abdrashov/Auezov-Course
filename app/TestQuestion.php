@@ -16,6 +16,16 @@ class TestQuestion extends Model
       return $this->hasMany(TestAnswer::class)->inRandomOrder();
    }
 
+   public function adminAnswers()
+   {
+      return $this->hasMany(TestAnswer::class);
+   }
+
+   public function training()
+   {
+      return $this->belongsTo(Training::class);
+   }
+
    public function testResults()
    {
       return $this->hasMany(TestResult::class, 'test_question_id');
