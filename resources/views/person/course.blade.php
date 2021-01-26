@@ -3,8 +3,10 @@
 @section('title',  __('app.my.courses'))
 
 @section('content')
-<div class="container my-5">
+<div class="container my-4">
     
+    {{ Breadcrumbs::render('my_course') }}
+
     <div class="bg-white px-3 py-4 shadow-sm training-header rounded overflow-hidden">
         <p class="h2">{{ __('app.my.courses') }}</p>
         <br>

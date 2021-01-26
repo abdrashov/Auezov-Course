@@ -3,7 +3,10 @@
 @section('title', __('app.profile'))
 
 @section('content')
-<div class="container my-5"> 
+<div class="container my-4"> 
+
+    {{ Breadcrumbs::render('home') }}
+
     @include('messages.error_success')
     <div class="bg-white mt-4 px-3 py-4 shadow-sm training-header rounded overflow-hidden">
         <p class="h2">{{ __('app.profile') }}</p>

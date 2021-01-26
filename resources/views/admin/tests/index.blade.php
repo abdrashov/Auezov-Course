@@ -37,7 +37,7 @@
 			   	<tr>
 						<th>{{ $loop->iteration }}</th>
 						<td width="300">{{ $testQuestion->title }}</td>
-		 				@foreach($testQuestion->answers as $answer)
+		 				@foreach($testQuestion->adminAnswers as $answer)
 							<td>{{ $answer->title }}</td>
 						@endforeach
 						<td>

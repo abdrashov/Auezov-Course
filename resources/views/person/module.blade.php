@@ -5,22 +5,11 @@
 @section('content')
 <div class="container my-4">
 
-	<nav aria-label="breadcrumb">
-		<ol class="breadcrumb bg-white shadow-sm">
-   		<li class="breadcrumb-item">
-   			<a href="{{ route('course',$course->id) }}">
-   				{{ __('app.course') }}
-   			</a>
-   		</li>
-	   	<li class="breadcrumb-item active">
-	   		{{ __('app.module') }}: {{ $course->title }}
-	   	</li>
-		</ol>
-	</nav>
+	{{ Breadcrumbs::render('module', $course) }}
 
 	<div class="bg-white p-4 shadow-sm training-header rounded overflow-hidden">
 		
-		<p class="h2">{{ $course->title }}</p>
+	<p class="h2">{{ $course->title }}</p>
 	
 <div class="table-responsive">
 	<table class="table table-bordered table-sm">

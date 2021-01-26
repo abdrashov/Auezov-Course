@@ -17,7 +17,7 @@
 			<label class="col-form-label">Вопрос</label>
 			<textarea name="question" class="form-control" placeholder="Вопрос" required>{{ $testQuestion->title }}</textarea>
 		</div>
-		@foreach($testQuestion->answers as $answer)
+		@foreach($testQuestion->adminAnswers as $answer)
 			@if( $answer->isBall() )
 				<div class="mb-1">
 					<label class="col-form-label">Правильный ответ</label>
