@@ -5,7 +5,7 @@
 @section('content')
 <div class="container my-4">
     
-    {{ Breadcrumbs::render('my_course') }}
+    {{ Breadcrumbs::render('my_courses') }}
 
     <div class="bg-white px-3 py-4 shadow-sm training-header rounded overflow-hidden">
         <p class="h2">{{ __('app.my.courses') }}</p>

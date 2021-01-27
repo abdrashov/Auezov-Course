@@ -29,4 +29,10 @@ Breadcrumbs::for('home', function ($trail) {
    $trail->push(__('app.profile'));
 });
 
+// welcome > my-courses
+Breadcrumbs::for('my_courses', function ($trail) {
+	$trail->parent('/');
+   $trail->push(__('app.my.courses'));
+});
+
 	
