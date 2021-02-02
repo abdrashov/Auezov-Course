@@ -36,8 +36,16 @@
 						<td>{{ $lesson->title }}</td>
 						<td>
 							<a href="{{ route('admin.trainings.show', $lesson->id) }}" class="my-1 badge btn btn-success px-2 font-weight-normal text-left">
+								<p class="mb-1">
+									Виды:
+								</p>
 								@foreach($lesson->trainings as $training)
-									<p class="mb-1">{{ $loop->iteration.') '.$training->title }}</p>
+									<p class="mb-1">
+										{{ $loop->iteration.') '.$training->title }}
+										@if( $training->isTest() )
+											{{ ': '.$training->testQuestions->count() }}
+										@endif
+									</p>
 								@endforeach
 							</a>
 						</td>
