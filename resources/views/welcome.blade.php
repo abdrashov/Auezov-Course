@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title', __('app.welcome') )
-
 @section('content')
 @include('messages.error_success')
 <section class="py-5 text-center bg-gardient-mint">

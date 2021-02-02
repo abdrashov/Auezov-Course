@@ -18,7 +18,7 @@ return [
     'ru'            => 'RU',
     'kk'            => 'KK',
 
-    'welcome'       => 'Welcome',
+    'welcome'       => 'Auezov courses',
     'authorization' => 'Authorization',
 
     'course'        => 'Сourse',

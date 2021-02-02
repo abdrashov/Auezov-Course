@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
-    <title>@yield('title') &#8212; {{ config('app.name') }}</title>
+    <title>@yield('title') {{ __('app.welcome') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('app.search.courses') )
+@section('title', __('app.search.courses')." – " )
 
 @section('content')
 <div class="bg-white">

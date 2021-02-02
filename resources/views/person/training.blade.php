@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $training->title )
+@section('title', $training->title." – " )
 
 @section('content')
 <div class="container my-4">

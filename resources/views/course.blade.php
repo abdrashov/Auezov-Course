@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $course->title)
+@section('title', $course->title." – ")
 
 @section('content')
 @include('messages.error_success')

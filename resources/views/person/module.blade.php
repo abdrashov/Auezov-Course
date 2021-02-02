@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Модуль: '.$course->title )
+@section('title', __('app.module').': '.$course->title." – " )
 
 @section('content')
 <div class="container my-4">
