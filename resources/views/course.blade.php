@@ -9,7 +9,7 @@
         <div class="row text-white">
             <div class="col-12 col-md-8 overflow-hidden">
                 <p class="h2">{{ $course->title }}</p>
-                <p class="lead">{{ $course->category->title }}</p>
+                <p class="lead">{{ $course->category->localTitle() }}</p>
                 @if( $course->activeUser() )
                     <button class="btn btn-lg btn-light active mt-1" role="button" aria-pressed="true">
                         {{ __('app.you.are.enroll') }}
