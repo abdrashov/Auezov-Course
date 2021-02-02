@@ -32,7 +32,7 @@ class Training extends Model
 	public function getTextFilt($text)
 	{
 		$text = str_replace(array("\r\n", "\r", "\n"), "</br>",  $text);
-		$text = str_replace(array("\\t\t", "\\t", "\t"), "&nbsp;&nbsp;&nbsp;&nbsp;", $text);
+		$text = str_replace(array("\\t\t", "\\t", "\t"), "&nbsp; &nbsp;", $text);
 		return '<p>'.$text.'</p>';
 	}
 
