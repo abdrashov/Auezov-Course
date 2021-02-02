@@ -17,7 +17,7 @@ class LessonController extends Controller
     public function show($module_id)
     {
         return view('admin.lessons.index',[
-            'module' => Module::with('lessons.trainings')->find($module_id),
+            'module' => Module::with('lessons.trainings.testQuestions')->find($module_id),
         ]);
     }
 
