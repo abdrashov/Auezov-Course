@@ -33,7 +33,8 @@
 			   	<tr>
 						<th>{{ $category->id }}</th>
 						<td>{{ $category->title }}</td>
-						<td>	
+						<td>
+							<a href="{{ route('admin.categories.show', $category->id) }}" class="my-1 badge btn btn-info">Показать</a><br>	
 							<!-- Modal Delete -->
 							<button type="button" class="my-1 badge btn btn-sm btn-danger " data-toggle="modal" data-target="#delete{{ $category->id }}">Удалить</button>
 						</td>

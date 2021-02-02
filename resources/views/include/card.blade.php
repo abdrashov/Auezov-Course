@@ -8,7 +8,7 @@
 		<h5 class="mb-1 card-title">
 			{{ $course->title }}
 		</h5>	
-		<p class="mb-0 card-text">{{ $course->category->title }}</p>
+		<p class="mb-0 card-text">{{ $course->category->localTitle() }}</p>
 		<p class="card-text text-right">
 			<small>{{ $course->dateStart() }} &ndash; {{ $course->dateEnd() }}</small>
 		</p>
