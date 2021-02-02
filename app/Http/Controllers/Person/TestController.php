@@ -15,6 +15,7 @@ class TestController extends Controller
 {
 	public function test(Course $course, Training $training)
 	{
+		$training = $training->load('testResults.question.answers');
 		if( !$training->users->contains(Auth::id()) ){
 			$training->users()->attach(Auth::id());
 		}
@@ -28,7 +29,7 @@ class TestController extends Controller
 			$training->testResults()->createMany($questions);
 		}
 		return view('person.test', [
-			'training' => $training->load('testResults.question.answers'),
+			'training' => $training,
 		]);
 	}
 
