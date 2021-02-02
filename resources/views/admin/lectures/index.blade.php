@@ -23,7 +23,7 @@
      	<table class="table table-striped table-sm">
        	<thead>
          	<tr>
-					<th>#</th>
+					<th># Индекс</th>
 					<th>Файл</th>
 					<th>Действие</th>
          	</tr>
@@ -31,7 +31,7 @@
 		 	<tbody>
 		 		@foreach($course->lectures as $lecture)
 			   	<tr>
-						<th>{{ $lecture->index }}</th>
+						<th>#{{ $lecture->index }} Лекция </th>
 						<td>
 							<a href="{{ Storage::url($lecture->file) }}" target="_blank">{{ $lecture->file }}</a>
 						</td>
