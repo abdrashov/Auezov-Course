@@ -37,7 +37,7 @@ class TestAnswer extends Model
 
 	public function testResults()
 	{
-		return $this->hasMany(TestResult::class, 'test_answer_id');
+		return $this->hasOne(TestResult::class, 'test_answer_id');
 	}
 
 	public function scopeBallResult($query)

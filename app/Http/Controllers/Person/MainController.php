@@ -10,24 +10,30 @@ use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
-   public function home()
-   {
-     	return view('person.home',[
-      	'user' => Auth::user(),
-     	]);
-   }
+	public function home()
+	{
+	 	return view('person.home',[
+	  	'user' => Auth::user(),
+	 	]);
+	}
 
 	public function userCourse()
 	{
-	  	return view('person.course', [
-      	'user' => Auth::user(),
-	  	]);
+		return view('person.course', [
+  		'user' => Auth::user(),
+		]);
 	}
 
- 	public function module(Course $course)
+	public function module(Course $course)
 	{
+		$course = $course->load('lessons.users', 'modules.lessons.trainings.users');
+		foreach ( $course->lessons as $lesson ) {
+			if( !$lesson->users->contains(Auth::id()) ){
+				$lesson->users()->attach(Auth::id());
+			}
+		}
 		return view('person.module',[
-		   'course' => $course->load('modules.lessons.trainings.users'),
+	   	'course' => $course,
 		]);
 	}
 
@@ -37,7 +43,7 @@ class MainController extends Controller
 			$training->users()->attach(Auth::id());
 		}
 		return view('person.training', [
-		   'training' => $training
+		 	'training' => $training
 		]);
 	}
 }

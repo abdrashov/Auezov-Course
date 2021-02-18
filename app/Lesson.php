@@ -6,15 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
-	protected $fillable = ['index', 'title', 'module_id'];
+	protected $fillable = ['index', 'title', 'module_id', 'user_id'];
 
-   public function trainings()
-   {
-   	return $this->hasMany(Training::class);
-   }
+	public function trainings()
+	{
+		return $this->hasMany(Training::class);
+	}
 
-   public function module()
-   {
-   	return $this->belongsTo(Module::class);
-   }
+	public function module()
+	{
+		return $this->belongsTo(Module::class);
+	}
+
+  public function users()
+  {
+    return $this->belongsToMany(User::class)->withPivot('ball')->withTimestamps();
+  }
 }

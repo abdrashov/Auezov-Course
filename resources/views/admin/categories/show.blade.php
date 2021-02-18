@@ -7,34 +7,34 @@
 	<br>
 	@include('messages.error_success')
 	<div class="row">
-		<div class="col-2">
+		<div class="col-3">
 			<b class="col-form-label">id</b>
 		</div>
-		<div class="col-sm-10">
+		<div class="col-9">
 			<p>{{ $category->id }}</p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-2">
+		<div class="col-3">
 			<b class="col-form-label">Название ru</b>
 		</div>
-		<div class="col-sm-10">
+		<div class="col-9">
 			<p>{{ $category->title }}</p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-2">
+		<div class="col-3">
 			<b class="col-form-label">Название kk</b>
 		</div>
-		<div class="col-sm-10">
+		<div class="col-9">
 			<p>{{ $category->title_kk }}</p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-2">
+		<div class="col-3">
 			<b class="col-form-label">Название en</b>
 		</div>
-		<div class="col-sm-10">
+		<div class="col-9">
 			<p>{{ $category->title_en }}</p>
 		</div>
 	</div>

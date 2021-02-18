@@ -39,12 +39,11 @@ class LessonController extends Controller
         $module_id = $request->module_id;
         for($i = 0; $i < count($index); $i++ ){
             $params[] = [
-                'module_id' => $module_id,
                 'index' => $index[$i],
                 'title' => $title[$i],
             ];
         }
-        Lesson::insert($params);
+        Module::find($module_id)->lessons()->createMany($params);
         return redirect()->route('admin.lessons.show', $module_id);
     }
 

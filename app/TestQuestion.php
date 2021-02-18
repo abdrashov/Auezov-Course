@@ -28,7 +28,7 @@ class TestQuestion extends Model
 
    public function testResults()
    {
-      return $this->hasMany(TestResult::class, 'test_question_id');
+      return $this->hasOne(TestResult::class, 'test_question_id');
    }
 
    public static function filterQuestion($training_id, $question)

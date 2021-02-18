@@ -14,10 +14,10 @@ class Training extends Model
 		return $this->hasMany(TestQuestion::class);
 	}
 
-   public function testResults()
-   {
-      return $this->hasMany(TestResult::class)->where('user_id', Auth::id());
-   }
+	public function testResults()
+	{
+		return $this->hasMany(TestResult::class)->where('user_id', Auth::id());
+	}
 
 	public function lesson()
 	{
@@ -26,7 +26,7 @@ class Training extends Model
 
 	public function users()
 	{
-		return $this->belongsToMany(User::class)->withTimestamps();
+		return $this->belongsToMany(User::class)->withPivot('ball')->withTimestamps();
 	}
 
 	public function getTextFilt($text)

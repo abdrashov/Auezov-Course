@@ -40,12 +40,11 @@ class ModuleController extends Controller
         $course_id = $request->course_id;
         for($i = 0; $i < count($index); $i++ ){
             $params[] = [
-                'course_id' => $course_id,
                 'index' => $index[$i],
                 'title' => $title[$i],
             ];
         }
-        Module::insert($params);
+        Course::find($course_id)->modules()->createMany($params);
         return redirect()->route('admin.modules.show', $course_id);
     }
 

@@ -72,5 +72,11 @@ Route::middleware(['auth'])->group(function () {
 		Route::resource('lessons', 'LessonController');
 		Route::resource('trainings', 'TrainingController');
 		Route::resource('tests', 'TestController');
+
+		Route::group(['as' => 'appraisal.'], function(){
+			Route::get('appraisal', 'AppraisalController@courses')->name('courses');
+			Route::get('followers/{course}', 'AppraisalController@followers')->name('followers');
+			Route::get('lessons/show/{course}', 'AppraisalController@lessonsShow')->name('lessons.show');
+		});
 	});
 });

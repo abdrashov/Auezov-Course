@@ -39,7 +39,7 @@
 									@else
 										<form action="{{ route('training', [$course, $training]) }}" method="get">
 									@endif
-										<button class="btn btn-light btn-block bg-mint text-left"data-tooltip="tooltip" data-placement="left" title="{{ __('app.open') }}">
+										<button class="btn btn-light btn-block bg-mint text-left" data-tooltip="tooltip" data-placement="left" title="{{ __('app.open') }}">
 											{{ $training->title }}
 										</button >
 									</form>

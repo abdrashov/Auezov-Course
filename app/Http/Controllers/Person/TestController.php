@@ -28,6 +28,7 @@ class TestController extends Controller
 			}
 			$training->testResults()->createMany($questions);
 		}
+		$training = Training::find($training->id);
 		return view('person.test', [
 			'training' => $training,
 		]);
