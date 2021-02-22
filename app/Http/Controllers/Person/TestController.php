@@ -54,7 +54,7 @@ class TestController extends Controller
 		if( TestAnswer::find($request->test_answer_id)->ball > 0 ){
 			$ball->test += 1;
 		}
-		if( empty(TestResult::where('training_id', $testresult->training_id)->whereNull('test_answer_id')->first()) ){
+		if( empty(TestResult::where('training_id', $testresult->training_id)->where('user_id', Auth::id())->whereNull('test_answer_id')->first()) ){
 			$ball->status = 1;
 		}
 		$ball->count_question += 1;
