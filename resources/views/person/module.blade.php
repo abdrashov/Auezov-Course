@@ -54,10 +54,10 @@
 											   	<tr>
 														<th>1</th>
 														<td width="160">
-															<input type="number" name="balls[]" class="form-control" min="0" max="100" required value="{{ $lesson->users->find(Auth::id())->pivot_ball() }}" disabled="">
+															<input type="number" name="balls[]" class="form-control" min="0" max="100" required value="{{ $lesson->users->find(Auth::id())->pivot_ball()  ?? '' }}" disabled="">
 														</td>
 														<td width="160">
-															<input type="text" name="balls[]" class="form-control" min="0" max="100" required value="{{ $lesson->users->find(Auth::id())->pivot_test() }}" disabled="">
+															<input type="text" name="balls[]" class="form-control" min="0" max="100" required value="{{ $lesson->users->find(Auth::id())->pivot_test() ?? '' }}" disabled="">
 														</td>
 														<td>
 															<span class="btn font-weight-bold">
