@@ -1,18 +1,14 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Подписчики')
+@section('title', 'Записались')
 
 @section('content')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 mb-5">
 	<br>
 	@include('messages.error_success')
 
-	<div class="alert alert-danger">
-		<b>!!!</b> Стадия разработки
-	</div>
-
   <div class="mt-4 mb-3">
-		<h1>Подписчики</h1>
+		<h1>Записались</h1>
 		<p>Курс: <span class="h5">{{ $course->title }}</span></p>
 	</div>
 
@@ -23,7 +19,7 @@
 					<th>#</th>
 					<th>Ф.И</th>
 					<th>Почта</th>
-					<th>Время под-ки</th>
+					<th>Дата под-ки</th>
        	</tr>
   		</thead>
 	 		<tbody>

@@ -20,6 +20,11 @@ class Lesson extends Model
 
   public function users()
   {
-    return $this->belongsToMany(User::class)->withPivot('ball')->withTimestamps();
+    return $this->belongsToMany(User::class)->withPivot('test')->withPivot('count_question')->withPivot('ball')->withPivot('status')->withTimestamps();
+  }
+
+  public function course()
+  {
+    return $this->belongsTo(Course::class);
   }
 }

@@ -48,10 +48,10 @@ Route::group(
 			Route::get('/module/{course}', 'MainController@module')->name('module');
 			Route::get('/module/{course}/trainings/{training}', 'MainController@training')
 			->name('training');
-			Route::get('/module/{course}/tests/{training}', 'TestController@test')
+			Route::get('/module/{course}/lesson/{lesson}/test/{training}', 'TestController@test')
 			->name('test');
 		});
-		Route::post('/test/result/{TestResult}', 'TestController@testAdd')
+		Route::post('/test/result/{testresult}', 'TestController@testAdd')
 		->name('testAdd');
 	});
 });
@@ -77,6 +77,10 @@ Route::middleware(['auth'])->group(function () {
 			Route::get('appraisal', 'AppraisalController@courses')->name('courses');
 			Route::get('followers/{course}', 'AppraisalController@followers')->name('followers');
 			Route::get('lessons/show/{course}', 'AppraisalController@lessonsShow')->name('lessons.show');
+			Route::get('lessons/users/{lesson}', 'AppraisalController@lessonsBall')->name('lessons.ball');
+			Route::get('lessons/users/{lesson}/ball', 'AppraisalController@ball')->name('ball');
+			Route::put('lessons/users/{lesson}/update', 'AppraisalController@lessonsUpdate')
+				->name('lessons.update');
 		});
 	});
 });

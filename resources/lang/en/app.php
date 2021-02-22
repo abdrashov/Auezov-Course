@@ -72,17 +72,26 @@ return [
     'you.are.enroll' => 'You are enrolled in this course',
     'course.hide.to' => 'Course hide to study this course, please contact the administration',
     'please.sign.up' => 'Please sign up for this course first',
-    'open' => 'Open',
+    'open'   => 'Open',
     'verify' => 'Verify',
+    'close'  => 'Сlose',
 
     'module'   => 'Module',
     'lecture'  => 'Lecture',
     'lesson'   => 'Lesson',
     'test'     => 'Test',
+    'rating'   => 'Rating',
+    'final.control' => 'Final control',
     'end.of.course' => 'End of course',
-    'course.start' => 'Course start',
-    'start.course' => 'Start a course',
+    'course.start'  => 'Course start',
+    'start.course'  => 'Start a course',
     'additional.materials' => 'Additional materials',
-    'unavailable' => 'Unavailable',
+    'unavailable'   => 'Unavailable',
+
+    'you.will.not.be'      => 'You will not be able to pass the test if you have not watched all the previous tasks (video tutorial, etc)',
+    'you.will.not.be.able' => 'You will not be able to pass the test until your teacher gives you a grade for the lecture',
+
+
+
 
 ];

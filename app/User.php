@@ -52,8 +52,34 @@ class User extends Authenticatable
         return $this->belongsToMany(Course::class)->withTimestamps();
     }
 
+    public function lessons()
+    {
+        return $this->belongsToMany(Lesson::class)->withPivot('ball')->withPivot('count_question')->withPivot('test')->withPivot('status')->withTimestamps();
+    }
+
     public function testResults()
     {
         return $this->hasMany(TestResult::class);
+    }
+
+    public function trainings()
+    {
+        return $this->belongsToMany(Training::class)->withTimestamps();
+    }
+
+    public function pivot_ball()
+    {
+        if( !is_null($this->pivot->ball) ){
+            $ball = intval($this->pivot->ball * 0.6);
+        }
+        return $ball ?? null;
+    }
+
+    public function pivot_test()
+    {
+        if( $this->pivot->status > 0 ){
+            $sum = intval(((100/$this->pivot->count_question)*$this->pivot->test) * 0.4);
+        }
+        return $sum ?? null;
     }
 }

@@ -7,13 +7,8 @@
 	<br>
 	@include('messages.error_success')
 
-	<div class="alert alert-danger">
-		<b>!!!</b> Стадия разработки
-	</div>
-
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-4 mb-3">
+  <div class="mt-4 mb-3">
 		<h1 class="h1">Оценки</h1>
-		<p class="text-secondary">Выберете курс</p>
 	</div>
 
   <div class="table-responsive">
@@ -22,7 +17,7 @@
        	<tr>
 					<th>#</th>
 					<th colspan="2">Название</th>
-					<th>Подписчики</th>
+					<th>Записались</th>
 					<th colspan="2">Оценки</th>
        	</tr>
   		</thead>
@@ -35,18 +30,13 @@
 						</td>
 						<td>{{ $course->title }}</td>
 						<td>
-							<a href="{{ route('admin.appraisal.followers', $course->id) }}" class="btn btn-sm btn-primary" data-tooltip="tooltip" data-placement="left" title="Открыть">
+							<a href="{{ route('admin.appraisal.followers', $course->id) }}" class="btn btn-sm btn-link text-dark" data-tooltip="tooltip" data-placement="left" title="Открыть">
 								{{ $course->users()->count() }}
 							</a>
 						</td>
 						<td>
-							<a href="{{ route('admin.appraisal.lessons.show', $course->id) }}" class="btn btn-sm btn-primary" data-tooltip="tooltip" data-placement="left" title="Открыть">
-								Посмотреть
-							</a>
-						</td>
-						<td>
-							<a href="{{ route('admin.appraisal.followers', $course->id) }}" class="btn btn-sm btn-success" data-tooltip="tooltip" data-placement="left" title="Открыть">
-								Поставить
+							<a href="{{ route('admin.appraisal.lessons.show', $course->id) }}" class="btn btn-sm btn-link text-primary">
+								Открыть
 							</a>
 						</td>
 	      @endforeach

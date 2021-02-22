@@ -16,10 +16,9 @@ class isStatusCourse
      */
     public function handle($request, Closure $next)
     {
-        if( $request->course->isStatusCourse() ){
-            return $next($request);
-        }
-
-        return redirect()->route('/')->with('warning', 'app.course.hide.to');
+        // if( !Course::find($request->course)->isStatus() ){
+        //     return redirect()->route('/')->with('warning', 'app.course.hide.to');
+        // }
+        return $next($request);
     }
 }

@@ -18,6 +18,7 @@ class CreateLessonUserTable extends Migration
             $table->integer('lesson_id');
             $table->integer('user_id');
             $table->integer('ball')->nullable()->unsigned();
+            $table->integer('test')->nullable()->unsigned();
             $table->timestamps();
         });
     }

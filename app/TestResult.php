@@ -14,10 +14,20 @@ class TestResult extends Model
 		return $this->belongsTo(TestQuestion::class, 'test_question_id');
 	}
 
+	public function training()
+	{
+		return $this->belongsTo(Training::class);
+	}
+
 	public function saveAnswer($answer_id)
 	{
 		$this->test_answer_id = $answer_id;
 		$this->save();
+	}
+
+	public function user()
+	{
+		return $this->belongsTo(User::class);
 	}
 
 	public function checkAnswer()

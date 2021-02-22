@@ -1,5 +1,5 @@
 
-<a href="{{ route('course',$course->id) }}" class="card link-hover">
+<a href="{{ route('course', $course->id) }}" class="card link-hover">
 
 	<img src="{{ Storage::url($course->image) }}" class="card-img-top" alt="{{ $course->title }}">
 	
